@@ -1,4 +1,4 @@
-import sbt._
+import sbt.*
 
 object Dependencies {
   lazy val zio: Seq[ModuleID] = {
@@ -6,6 +6,13 @@ object Dependencies {
     Seq(
       "dev.zio" %% "zio"         % version,
       "dev.zio" %% "zio-streams" % version,
+    )
+  }
+
+  lazy val `zio-logging-slf4j2`: Seq[ModuleID] = {
+    val version = "2.4.0"
+    Seq(
+      "dev.zio" %% "zio-logging-slf4j2" % version,
     )
   }
 
@@ -33,6 +40,11 @@ object Dependencies {
     )
   }
 
-  lazy val all: Seq[ModuleID] = zio ++ `zio-http` ++ `zio-kafka` ++ `zio-config`
+  lazy val all: Seq[ModuleID] =
+    zio ++
+      `zio-http` ++
+      `zio-kafka` ++
+      `zio-config` ++
+      `zio-logging-slf4j2`
 
 }

@@ -1,4 +1,4 @@
-import Dependencies._
+import Dependencies.*
 
 val scalaV      = "2.13.15"
 

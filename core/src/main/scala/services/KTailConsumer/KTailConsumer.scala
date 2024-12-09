@@ -13,8 +13,6 @@ trait KTailConsumer {
 }
 
 object KTailConsumer {
-  def consume: URIO[KTailConsumer, Stream[Throwable, Message]] =
-    ZIO.serviceWith[KTailConsumer](_.consume)
 
   val live: RLayer[KTailConfig, KTailConsumer] =
     ZLayer.scoped {
